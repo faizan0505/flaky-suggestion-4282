@@ -9,8 +9,8 @@ let data =
         "id": 1
     },
     {
-        "name": "Aloft New Delhi Aerocity",
-        "image": "https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/14000000/13240000/13235700/13235605/5be22f44_b.jpg",
+        "name": "Maidens New Delhi ",
+        "image": "https://images.trvl-media.com/hotels/1000000/20000/14700/14700/0b742f80.jpg?impolicy=resizecrop&rw=455&ra=fit",
         "price": 97,
         "description": "Aloft New Delhi Aerocity se encuentra en Aerocity, una zona con acceso fácil a un centro comercial. Qutub Minar (torre) y Gurudwara Bangla Sahib son lugares emblemáticos, y los",
         "rating": "8.9/10",
@@ -201,4 +201,54 @@ let data =
         "id": 25
     }
 ]
+RenderHotelsData(data)
+
+function RenderHotelsData(data){
+    let mainSection = document.getElementById("fetching-data");
+    mainSection.innerHTML = "";
+    let allData = data.map((item)=>{
+        return `
+            <div id="main-container">
+                <div id="image-section">
+                    <img src="${item.image}" alt=""/>
+                </div>
+                <div id="desc-section">
+                    <h2>${item.name.substring(0,25)+"..."}</h2>
+                    <p>${item.description.substring(0,100)+"..."}<p>
+                    <a href="#">Fully Refundable</a>
+                    <a href="#">Reserve now, pay later</a>
+                    <div id="rating-price">
+                        <div>
+                            <h5>${item.rating} Excellent (487 reviews)</h5>
+                        </div>
+                        <div id="price">
+                            <h2>${"&nbsp;&nbsp;"+"$"+item.price}</h2>
+                             <sapan>${"&nbsp;&nbsp;"+"$"+item.price} total</span>
+                        </div>
+                        <a href="#"><button id="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join(" ");
+    mainSection.innerHTML = allData;
+}
+
+//Sort By Price
+// function sortByPrice(){
+//     let selected = document.getElementById("sort-data").value;
+//     if(selected=="select"){
+//         RenderHotelsData(data);
+//     }
+//     if(selected=="LTH"){
+        
+//     }
+//     console.log(newData)
+//     // if(selected=="HTL"){
+//     //     data.sort((a,b)=>{
+//     //         b.price - a.price;
+//     //     });
+//     // }
+//     // RenderHotelsData(data)
+// }    
 
