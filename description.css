@@ -121,6 +121,65 @@ background-color: rgba(245, 245, 220, 0.671);
     color: blue;
     text-decoration: underline;
 }
-#popup{
+
+#division{
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconic{
+    display: flex;
+}
+.iconi{
+    display: flex;
+    height: 40px;
+}
+.iconi p{
+    padding-top: 22px;
+    padding-left: 10px;
+}
+.icon {
+    width: 30px;
+}
+.icon img{
+    width: 100%;
+}
+.iconic p{
+    padding-top: 23px;
+    padding-left: 10px;
+}
+
+#popup{ height: 80vh;
     width: 70%; margin: auto; border: 1px solid salmon; position: absolute;
+    margin-top: 80px; margin-left: 200px;
+    background-color: white;
+    padding-bottom: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: none;
+}
+
+#disp{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#disp>div{
+    width: 40%;
+    border-radius: 10px;
+    border: 1px solid slategray;
+    padding: 20px 30px;
+    margin-top: 30px;
+}
+
+#popup h1{
+    margin-left: 20px;
+}
+#refund{
+ margin-top: 32px;
+}
+#close:hover{
+    background-color: rgb(255, 30, 0);
+    border-radius: 5px;
 }
