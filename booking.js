@@ -222,33 +222,62 @@ function RenderHotelsData(data){
                             <h5>${item.rating} Excellent (487 reviews)</h5>
                         </div>
                         <div id="price">
-                            <h2>${"&nbsp;&nbsp;"+"$"+item.price}</h2>
-                             <sapan>${"&nbsp;&nbsp;"+"$"+item.price} total</span>
+                            <h2>$${item.price}</h2>
+                             <sapan>${"$"+item.price} total</span>
                         </div>
-                        <a href="#"><button id="book-btn">Book Now</button></a>
+                        <a href="#"><button class="book-btn" data-id=${item.id}>Book Now</button></a>
                     </div>
                 </div>
             </div>
         `;
     }).join(" ");
     mainSection.innerHTML = allData;
+    let allBookButton = document.querySelectorAll(".book-btn");
+        for(let BookButton of allBookButton){
+            BookButton.addEventListener("click",function(event){
+               let id = event.target.dataset.id;
+               let newData = data.filter((item)=>{
+                    return id == item.id;
+               })
+               localStorage.setItem("keyhotel",JSON.stringify(newData));
+            })
+        }
+}
+//Stor data in local storage
+
+
+// Sort By Price
+function sortByPrice(){
+    let selected = document.querySelector("#sort-data").value;
+    if(selected==="LTH"){
+        RenderHotelsData(data.sort((a,b)=>a.price - b.price))
+    }
+    if(selected==="HTL"){
+        RenderHotelsData(data.sort((a,b)=>b.price - a.price))
+    }
+}
+//Search By Name
+function SearchHotel(){
+    let hotelData = document.querySelector("#inputData").value;
+    let searchData = data.filter((item)=>{
+        return item.name.toLowerCase().includes(hotelData.toLowerCase());
+    })
+    RenderHotelsData(searchData)
+}
+//Search By Location
+function LocationSearch(){
+    let location = document.querySelector("#location").value;
+    let locationData = data.filter((item)=>{
+        return item.name.toLowerCase().includes(location.toLowerCase());
+    })
+    RenderHotelsData(locationData)
 }
 
-//Sort By Price
-// function sortByPrice(){
-//     let selected = document.getElementById("sort-data").value;
-//     if(selected=="select"){
-//         RenderHotelsData(data);
-//     }
-//     if(selected=="LTH"){
-        
-//     }
-//     console.log(newData)
-//     // if(selected=="HTL"){
-//     //     data.sort((a,b)=>{
-//     //         b.price - a.price;
-//     //     });
-//     // }
-//     // RenderHotelsData(data)
-// }    
 
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }

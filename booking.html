@@ -16,21 +16,21 @@
     <div id="container">
       <hr />
       <div id="booking-form">
-        <input type="text" placeholder="Location" />
+        <input type="text" placeholder="Location" oninput="LocationSearch()"/ id="location">
         <input type="date" value="Dec-28" />
         <input type="month" />
-        <input type="number" />
+        <input type="number" placeholder="Person"/>
         <input type="submit" />
       </div>
       <div id="api-container">
         <div id="sort-section">
           <div id="map-image">
             <img src="Images/staticmap.jpg" alt="Map" />
-            <a href="#">View in map</a>
+            <a href="location.html">View in map</a>
           </div>
           <hr>
           <div id="search-input">
-            <input type="text" placeholder="search by name">
+            <input type="text" placeholder="search by name" oninput="SearchHotel()" id="inputData">
           </div>
           <hr>
           <div id="filter">
@@ -165,7 +165,7 @@
             <div>
               <!-- <input type="text" name="" id="" placeholder="Sort by price" /> -->
               <select name="" id="sort-data" onchange="sortByPrice();">
-                  <option value="select">Sort By Price</option>
+                  <option value=" ">Sort By Price</option>
                   <option value="LTH">Low to high</option>
                   <option value="HTL">High to low</option>
               </select>
@@ -193,6 +193,19 @@
            <!-- Api Data -->
           </div>
         </div>
+        <!-- Chat Section -->
+        <button class="open-button" onclick="openForm()"><i class="fa fa-wechat" style="font-size:48px;color:rgb(158, 8, 28)"></i></button>
+        <div class="chat-popup" id="myForm">
+          <form action="#" class="form-container">
+            <h3 style="text-align: center; color: rgb(251, 255, 255); background-color: rgb(105, 102, 105); padding: 12px;border-radius: 10px;">Chat with Yaatra</h3>
+            <label for="msg" style="text-align: center; color: teal;"><b>Message......</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+        <!-- Chat section close -->
       </div>
     </div>
   </body>
