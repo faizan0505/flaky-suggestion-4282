@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .logo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #back{
+            font-size: 35px;
+            background-color: white;
+            border: 0px;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            width: 100px;
+        }
+        .cart{
+            /* border: 1px solid red; */
+            width: 30%;
+            margin: auto;
+            text-align: center;
+        }
+        h1{
+            text-align: left;
+        }
+       .inputs {
+        width: 100%;
+        height: 30px;
+        /* padding: 5px; */
+        margin: 10px 0px;
+        border-radius: 8px;
+        border: 1px solid ;
+       }
+       #continue{
+        background-color: blue;
+        color: white;
+        
+       }
+       #continue :hover{
+        color: rgb(118, 118, 216);
+       }
+       .web{
+        width: 20px;
+       }
+     
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="logo">
+
+            <div>
+                <button id="back"><a href=""> < </a></button>
+            </div>
+            <div id="logo">
+                 <img src="https://www.travelocity.com/_dms/interstitial/logo.svg?locale=en_US&siteid=80001" alt="logo">
+                </div>
+                <div>
+                </div>
+        </div>
+        <hr>
+        <div class="cart">
+            <h1>Creat an account</h1>
+            <form id="form">
+                <input type="email" placeholder="Email address" class="inputs" id="email"><br> 
+                <input type="Password" id="password"placeholder="Password" class="inputs"><br>
+                <label for="" class="warning" id="pw"></label>
+                
+
+
+                <input type="checkbox" id="chek"> <br><label for="">Keep me signed in</label>
+                <p>By Creating an account I agree to the Travelocity Terms and Conditions and Privacy Statment</p>
+                <input type="submit" value="Continue" class="inputs" id="continue"><br>
+                
+            </form>
+            <p>Don't have an account? <a href="#">Create one</a></p>
+            <p>Or continue with</p>
+            <img class="web" src="https://a.travel-assets.com/egds/marks/apple.svg" alt="">
+            <img class = 'web'
+            src="https://a.travel-assets.com/egds/marks/facebook.svg" alt="">
+        </div>
+        
+    </div>
+</body>
+</html>
+ <script>
+    let Form = document.getElementById('form');
+    let id = document.getElementById('email');
+    let pass = document.getElementById('password');
+    let arr = JSON.parse(localStorage.getItem('userData')) || [];;
+   
+
+    Form.addEventListener('submit',function(event){
+        event.preventDefault();
+        let obj = {
+            first_name : fName.value.trim(),
+            last_name : lName.value.trim(),
+            email : id.value.trim(),
+            password  : pass.value.trim()
+        };
+
+   
+    })
+
+   
+
+
+ 
+    
+ </script>
