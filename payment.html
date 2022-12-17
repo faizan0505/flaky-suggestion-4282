@@ -52,15 +52,16 @@
             height: 30px;
             width: 100%;
             margin: auto;
-            border: 1px solid rgb(250, 183, 0);
-            background-color: rgba(250, 250, 0, 0.404);
+            border: 1px solid rgba(0, 0, 255, 0.884);
+            background-color: aliceblue;
             border-radius: 8px;
             margin-bottom: 15px;
             margin-top: 5px;
         }
 
         input[type="submit"] {
-            background-color: rgb(250, 183, 0);
+            background-color: rgba(0, 0, 255, 0.884);
+            color: white;
             margin-top: 15px;
             height: 35px;
             border: none;
@@ -100,7 +101,7 @@
             position: absolute;
             width: 55%;
             margin: auto;
-            margin-left: 78vh;
+            margin-left: 68.5vh;
             margin-top: 20vh;
             display: none;
         }
@@ -158,8 +159,9 @@
 
         <img src="image/payment-logo.jpg" alt="">
 
-
-        <h2 id="disp">Total Payment Amount : 00</h2>
+        <h3 id="in_date"></h3>
+        <h3 id="out_date"></h3>
+        <h2 id="disp">Total Payment Amount : $497</h2>
 
         <form action="">
             <label for="">Name On Card</label>
@@ -225,5 +227,8 @@
     })
 
 let tota = JSON.parse(localStorage.getItem("payment"))
-document.querySelector("#disp").innerText = "Total Payment Amount : "+tota
+// document.querySelector("#disp").innerText = "Total Payment Amount : "+tota
+
+document.querySelector("#in_date").innerText = "Check In : "+ check_in.value
+document.querySelector("#out_date").innerText = "Check Out : "+ check_out.value
 </script>
