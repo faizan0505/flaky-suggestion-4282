@@ -486,5 +486,58 @@ document.querySelector("#package").addEventListener("click",()=>{
             `
         }
     })
+
+    window.addEventListener("load",()=>{
+        
+            document.querySelector(".menu>div:nth-child(1)").classList.add("underline")
+            document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+            document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+            document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+            document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+            
+        
+    })
     
 
+
+document.querySelector("#stay").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.add("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+    
+})
+
+document.querySelector("#flight").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.add("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+    
+})
+document.querySelector("#car").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.add("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+    
+})
+document.querySelector("#package").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.add("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+    
+})
+document.querySelector("#things").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.add("underline")
+    
+})
