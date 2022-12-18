@@ -54,6 +54,19 @@
        .web{
         width: 20px;
        }
+       label{
+        color: red;
+        display: block;
+       }
+       #keep{
+        color: blue;
+       }
+       #chek{
+        border-color: red;
+       }
+       #back > img{
+            width: 20px;
+       }
      
 
     </style>
@@ -63,7 +76,9 @@
         <div class="logo">
 
             <div>
-                <button id="back"><a href=""> < </a></button>
+                <a href="./login.html" id="back">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8979/8979605.png" alt="">
+                </a>
             </div>
             <div id="logo">
                  <img src="https://www.travelocity.com/_dms/interstitial/logo.svg?locale=en_US&siteid=80001" alt="logo">
@@ -76,23 +91,27 @@
             <h1>Creat an account</h1>
             <form id="form">
                 <input type="email" placeholder="Email address" class="inputs" id="email"><br> 
+                <label for="" id="emailE"></label>
 
                 <input type="text" id="fname" placeholder="First name" class="inputs"><br>            
+                <label for="" id="fnameE"></label>
 
                 <input type="text" id="lname" placeholder="Last name"class="inputs"><br>
+                <label for="" id="lnameE"></label>
 
                 <input type="Password" id="password"placeholder="Password" class="inputs"><br>
+                <label for="" id="passE"></label><br><br>
 
-                <label for="" class="warning" id="pw"></label>
+                
                 
 
 
-                <input type="checkbox" id="chek"> <br><label for="">Keep me signed in</label>
+                <input type="checkbox" id="chek"> <br><label id="keep" for="">Keep me signed in</label>
                 <p>By Creating an account I agree to the Travelocity Terms and Conditions and Privacy Statment</p>
                 <input type="submit" value="Continue" class="inputs" id="continue"><br>
                 
             </form>
-            <p>Already have an account? <a href="#">Sign in</a></p>
+            <p>Already have an account? <a href="./login.html">Sign in</a></p>
             <p>Or continue with</p>
             <img class="web" src="https://a.travel-assets.com/egds/marks/apple.svg" alt="">
             <img class = 'web'
@@ -108,7 +127,10 @@
     let lName = document.getElementById('lname');
     let id = document.getElementById('email');
     let pass = document.getElementById('password');
-    let arr = JSON.parse(localStorage.getItem('userData')) || [];;
+    
+   
+
+    let arr = JSON.parse(localStorage.getItem('userdata')) || [];;
    
 
     Form.addEventListener('submit',function(event){
@@ -120,25 +142,138 @@
             password  : pass.value.trim()
         };
 
-    arr.push(obj);
-    localStorage.setItem('userData',JSON.stringify(arr));
-    alert('sign in successful')
+    
+    validate(obj);
+   
     })
 
-    function checkPW(str){
-        let nums = '0123456789';
-        for(let i=0;i<str.length;i++){
-            for(let j=0;j<nums.length;j++){
-                if(str[i] == nums[j]){
-                    return true
-                }else{
-                    return false
+//valided email
+    function isEmail(email){
+        var S = email.indexOf("@");
+        if(S < 2){
+            return false;
+        }
+        
+        var dot = email.lastIndexOf('.');
+        if(dot <= S + 3){
+            return false;
+        }
+        if(dot == email.length-1){
+            return false;
+        }
+        return true
+    }
+    // valided password
+    function isPassword(password){
+        let num = "1234567890!@#$%^&*_-";
+        for(let el of password){
+            for(let n of num){
+                if(n == el){
+                    return true;
                 }
             }
         }
     }
 
 
- 
-    
+    function  validate(obj){
+        let fname = obj.first_name;
+        let lname = obj.last_name;
+        let email = obj.email;
+        let password = obj.password
+        let fnameE =  document.getElementById('fnameE')
+        let lnameE =  document.getElementById('lnameE')
+        let emailE =  document.getElementById('emailE')
+        let passE =  document.getElementById('passE')
+
+
+        //div
+        let fName = document.getElementById('fname')
+        let lName = document.getElementById('lname');
+        let id = document.getElementById('email');
+        let pass = document.getElementById('password');
+
+        let ok;
+        let data = {}
+
+        
+        //first name ;
+        if(fname == ""){
+           fnameE.innerText = "First Name can not be blank";
+            fName.style.borderColor = 'red'
+
+        }
+        else if(fname.length <= 2){
+            fnameE.innerText = "Name minimum 3 charactor"
+            fName.style.borderColor = 'red'
+
+        }
+        else{
+            fnameE.innerHTML = ""
+            data.first_name = fname ;
+            fName.style.borderColor = 'green'
+             data.ok = true;
+
+        }
+
+        // last name
+        if(lname == ""){
+           lnameE.innerText = "Last Name can not be blank";
+           lName.style.borderColor = 'red'
+
+
+        }
+        else if(fname.length <= 1){
+            lnameE.innerText = "Last Name minimum 2 charactor"
+           lName.style.borderColor = 'red'
+
+        }
+        else{
+            lnameE.innerHTML = ""
+            data.last_name = lname ;
+           lName.style.borderColor = 'green'
+           data.ok = true;
+
+            
+        }
+        
+        //email
+        if(!isEmail(email)){
+            emailE.innerText = "Not a valid email"
+            id.style.borderColor = 'red'
+
+        }else{
+            emailE.innerHTML = "";
+            data.email = email 
+            id.style.borderColor = 'green'
+            data.ok = true;
+
+        }
+
+        //password
+        if(password.length < 5){
+            passE.innerText = "password should have min 5 charactor";
+            pass.style.borderColor = 'red'
+
+        }else if(!isPassword(password)){
+            passE.innerText = "Password should conatian num or symbol";
+            pass.style.borderColor = 'red'
+
+        }else{
+            passE.innerHTML = ""
+            data.password = password
+            pass.style.borderColor = 'green'
+             data.ok1 = true;
+
+        }
+
+        
+      if(data.ok1){
+        arr.push(data);
+        localStorage.setItem("userdata",JSON.stringify(arr));
+        location.href='login.html'
+      }
+    }
+
+
  </script>
