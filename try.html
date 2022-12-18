@@ -1,0 +1,29 @@
+<div id="loader">
+    <iframe src="https://giphy.com/embed/sSgvbe1m3n93G" width="100" height="100" frameBorder="0"
+      class="giphy-embed" allowFullScreen></iframe>
+    
+  </div>
+  
+  
+  
+  loader = document.querySelector("#loader")
+  main = document.querySelector("#main")
+  window.onload = () => {
+main.style.display="none"
+loader.style.display="flex"
+setTimeout(()=>{
+    main.style.display="block"
+    loader.style.display="none"
+},1000)
+};
+
+
+
+#loader{
+/* border: solid red; */
+width: 100%;
+height: 95vh;
+display: none;
+justify-content: space-evenly;
+align-items: center;
+}

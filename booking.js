@@ -225,7 +225,7 @@ function RenderHotelsData(data){
                             <h2>$${item.price}</h2>
                              <sapan>${"$"+item.price} total</span>
                         </div>
-                        <a href="#"><button class="book-btn" data-id=${item.id}>Book Now</button></a>
+                        <a href="description.html"><button class="book-btn" data-id=${item.id}>Book Now</button></a>
                     </div>
                 </div>
             </div>
