@@ -61,7 +61,7 @@
         <div class="logo">
 
             <div>
-                <a href="xx" id="back"> 
+<a href="" id="back"> 
                     <img src="https://cdn-icons-png.flaticon.com/128/8979/8979605.png" alt="">    
                 </a>
             </div>
@@ -114,8 +114,11 @@
             let password = el.password
             let name = el.first_name
             if(email == mail && password == pw ){
-                res.innerText = `Welcome ${name}`
+ res.innerText = `Welcome ${name}`
                 location.href='./homepage/fw22_0277home.html'
+
+                alert(`✅ Welcome ${name} `)
+                location.href="flaky-suggestion-4282\homepage\fw22_0277home.html"
             }else{
                 res.innerText = `Email and password don't match. Please try again.`
                 res.style.backgroundColor = 'red'

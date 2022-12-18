@@ -269,3 +269,275 @@ document.querySelector("#package").addEventListener("click",()=>{
  </div>
     
     `})
+
+
+    
+
+    let count=0;
+    document.querySelector("#bottom-hotels").addEventListener("click",()=>{
+        count++;
+        if(count%2==0){
+            document.querySelector("#bottom-hotels").innerHTML=`
+            <div><h4>Hotels</h4></div>
+            <div> <i class="arrow down"></i></div>
+            `
+        }else if(count%2==1){
+            document.querySelector("#bottom-hotels").innerHTML=`
+            <div>
+                            
+            <h4>Hotels</h4>
+            <div>
+                <ul>
+                <li> Chicago hotels</li>
+                <li>Baltimore hotels</li>
+                <li>London hotels</li>
+                <li>Paris hotels</li>
+                <li>France hotels</li>
+            </ul>
+                
+            </div>
+           
+        </div>
+        <div> <i class="arrow up"></i></div>
+            `
+        }
+    })
+
+    let count1=0;
+    document.querySelector("#bottom-Flights").addEventListener("click",()=>{
+        count1++;
+        if(count1%2==0){
+            document.querySelector("#bottom-Flights").innerHTML=`
+            <div><h4>Flights</h4></div>
+            <div> <i class="arrow down"></i></div>
+            `
+        }else if(count1%2==1){
+            document.querySelector("#bottom-Flights").innerHTML=`
+            <div>
+                            
+            <h4>Flights</h4>
+            <div>
+                <ul>
+                <li> Chicago hotels</li>
+                <li>Baltimore hotels</li>
+                <li>London hotels</li>
+                <li>Paris hotels</li>
+                <li>France hotels</li>
+            </ul>
+                
+            </div>
+           
+        </div>
+        <div> <i class="arrow up"></i></div>
+            `
+        }
+    })
+    
+
+    let count2=0;
+    document.querySelector("#bottom-vacation").addEventListener("click",()=>{
+        count2++;
+        if(count2%2==0){
+            document.querySelector("#bottom-vacation").innerHTML=`
+            <div><h4>Vacation Packages</h4></div>
+            <div> <i class="arrow down"></i></div>
+            `
+        }else if(count2%2==1){
+            document.querySelector("#bottom-vacation").innerHTML=`
+            <div>
+                            
+            <h4>Vacation Packages</h4>
+            <div>
+                <ul>
+                <li> Chicago hotels</li>
+                <li>Baltimore hotels</li>
+                <li>London hotels</li>
+                <li>Paris hotels</li>
+                <li>France hotels</li>
+            </ul>
+                
+            </div>
+           
+        </div>
+        <div> <i class="arrow up"></i></div>
+            `
+        }
+    })
+    
+
+    let count3=0;
+    document.querySelector("#bottom-cars").addEventListener("click",()=>{
+        count3++;
+        if(count3%2==0){
+            document.querySelector("#bottom-cars").innerHTML=`
+            <div><h4>Cars</h4></div>
+            <div> <i class="arrow down"></i></div>
+            `
+        }else if(count3%2==1){
+            document.querySelector("#bottom-cars").innerHTML=`
+            <div>
+                            
+            <h4>Cars</h4>
+            <div>
+                <ul>
+                <li> Chicago hotels</li>
+                <li>Baltimore hotels</li>
+                <li>London hotels</li>
+                <li>Paris hotels</li>
+                <li>France hotels</li>
+            </ul>
+                
+            </div>
+           
+        </div>
+        <div> <i class="arrow up"></i></div>
+            `
+        }
+    })
+    
+
+    let count4=0;
+    document.querySelector("#bottom-cruises").addEventListener("click",()=>{
+        count4++;
+        if(count4%2==0){
+            document.querySelector("#bottom-cruises").innerHTML=`
+            <div><h4>Cruises</h4></div>
+            <div> <i class="arrow down"></i></div>
+            `
+        }else if(count4%2==1){
+            document.querySelector("#bottom-cruises").innerHTML=`
+            <div>
+                            
+            <h4>Cruises</h4>
+            <div>
+                <ul>
+                <li> Chicago hotels</li>
+                <li>Baltimore hotels</li>
+                <li>London hotels</li>
+                <li>Paris hotels</li>
+                <li>France hotels</li>
+            </ul>
+                
+            </div>
+           
+        </div>
+        <div> <i class="arrow up"></i></div>
+            `
+        }
+    })
+    
+    let count5=0;
+    document.querySelector("#bottom-resorts").addEventListener("click",()=>{
+        count5++;
+        if(count5%2==0){
+            document.querySelector("#bottom-resorts").innerHTML=`
+            <div><h4>All inclusive resorts</h4></div>
+            <div> <i class="arrow down"></i></div>
+            `
+        }else if(count5%2==1){
+            document.querySelector("#bottom-resorts").innerHTML=`
+            <div>
+                            
+            <h4>All inclusive resorts</h4>
+            <div>
+                <ul>
+                <li> Chicago hotels</li>
+                <li>Baltimore hotels</li>
+                <li>London hotels</li>
+                <li>Paris hotels</li>
+                <li>France hotels</li>
+            </ul>
+                
+            </div>
+           
+        </div>
+        <div> <i class="arrow up"></i></div>
+            `
+        }
+    })
+    
+
+    let count6=0;
+    document.querySelector("#bottom-deals").addEventListener("click",()=>{
+        count6++;
+        if(count6%2==0){
+            document.querySelector("#bottom-deals").innerHTML=`
+            <div><h4>Travel deals</h4></div>
+            <div> <i class="arrow down"></i></div>
+            `
+        }else if(count6%2==1){
+            document.querySelector("#bottom-deals").innerHTML=`
+            <div>
+                            
+            <h4>Travel deals</h4>
+            <div>
+                <ul>
+                <li> Chicago hotels</li>
+                <li>Baltimore hotels</li>
+                <li>London hotels</li>
+                <li>Paris hotels</li>
+                <li>France hotels</li>
+            </ul>
+                
+            </div>
+           
+        </div>
+        <div> <i class="arrow up"></i></div>
+            `
+        }
+    })
+
+    window.addEventListener("load",()=>{
+        
+            document.querySelector(".menu>div:nth-child(1)").classList.add("underline")
+            document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+            document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+            document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+            document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+            
+        
+    })
+    
+
+
+document.querySelector("#stay").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.add("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+    
+})
+
+document.querySelector("#flight").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.add("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+    
+})
+document.querySelector("#car").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.add("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+    
+})
+document.querySelector("#package").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.add("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.remove("underline")
+    
+})
+document.querySelector("#things").addEventListener("click",()=>{
+    document.querySelector(".menu>div:nth-child(1)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(2)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(3)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(4)").classList.remove("underline")
+    document.querySelector(".menu>div:nth-child(5)").classList.add("underline")
+    
+})
