@@ -18,28 +18,48 @@ reserve.addEventListener("click", () => {
     if (check_in.value == "" || check_out.value == "") {
         alert("Please select the date for Check-In & Check-Out")
     } else {
-        popup.style.display = "block";
+        loader = document.querySelector("#loading")
+        loader.style.display = "block"
+        setTimeout(() => {
+            loader.style.display = "none"
+            popup.style.display = "block";
+        }, 1000)
     }
 })
 document.querySelector(".butts").addEventListener("click", () => {
     if (check_in.value == "" || check_out.value == "") {
         alert("Please select the date for Check-In & Check-Out")
     } else {
-        popup.style.display = "block";
+        loader = document.querySelector("#loading")
+        loader.style.display = "block"
+        setTimeout(() => {
+            loader.style.display = "none"
+            popup.style.display = "block";
+        }, 1000)
     }
 })
 document.querySelector(".butto").addEventListener("click", () => {
     if (check_in.value == "" || check_out.value == "") {
         alert("Please select the date for Check-In & Check-Out")
     } else {
-        popup.style.display = "block";
+        loader = document.querySelector("#loading")
+        loader.style.display = "block"
+        setTimeout(() => {
+            loader.style.display = "none"
+            popup.style.display = "block";
+        }, 1000)
     }
 })
-document.querySelector(".button").addEventListener("click", () => {
+document.querySelector(".buttons").addEventListener("click", () => {
     if (check_in.value == "" || check_out.value == "") {
         alert("Please select the date for Check-In & Check-Out")
     } else {
-        popup.style.display = "block";
+        loader = document.querySelector("#loading")
+        loader.style.display = "block"
+        setTimeout(() => {
+            loader.style.display = "none"
+            popup.style.display = "block";
+        }, 1000)
     }
 })
 
@@ -51,7 +71,7 @@ pay.addEventListener("click", () => {
     location.href = "payment.html"
 })
 
-let overview_page = document.querySelector("#main");
+let overview_page = document.querySelector("#upmain");
 let room_page = document.querySelector("#roomins");
 let location_page = document.querySelector("#location");
 let policy_page = document.querySelector("#policy");
@@ -69,6 +89,7 @@ Overview_btn.addEventListener("click", () => {
 
     // Overview_btn.style.border-bottom = "2px solid rgba(0, 0, 255, 0.884)";
 
+    // overview_page.style.display = "block";
     room_page.style.display = "none";
     location_page.style.display = "none";
     policy_page.style.display = "none";
@@ -77,6 +98,7 @@ Overview_btn.addEventListener("click", () => {
 rooms_btn.addEventListener("click", () => {
 
     room_page.style.display = "block";
+    // overview_page.style.display = "none";
     location_page.style.display = "none";
     policy_page.style.display = "none";
 })
@@ -84,6 +106,7 @@ rooms_btn.addEventListener("click", () => {
 location_btn.addEventListener("click", () => {
 
     room_page.style.display = "none";
+    // overview_page.style.display = "none";
     location_page.style.display = "block";
     policy_page.style.display = "none";
 })
@@ -91,6 +114,26 @@ location_btn.addEventListener("click", () => {
 policy_btn.addEventListener("click", () => {
 
     room_page.style.display = "none";
+    // overview_page.style.display = "none";
     location_page.style.display = "none";
     policy_page.style.display = "block";
 })
+
+
+let hoteldata = JSON.parse(localStorage.getItem("keyhotel"));
+
+console.log(hoteldata)
+
+let topimg = document.querySelector("#topimg");
+topimg.innerHTML = `<img src="${hoteldata[0].image}" alt="">`
+document.querySelector("#headd").innerText = hoteldata[0].name;
+document.querySelector("#discrip").innerText = `${hoteldata[0].description.substring(0,100)+"..."}`;
+document.querySelector(".paisa1").innerText = "$ "+ hoteldata[0].price
+document.querySelector(".paisa2").innerText = "$ "+ hoteldata[0].price
+document.querySelector(".paisa3").innerText = "$ "+ hoteldata[0].price
+document.querySelector(".paisa4").innerText = "$ "+ hoteldata[0].price
+document.querySelector(".paisa5").innerText = "$ "+ hoteldata[0].price
+document.querySelector("#tota").innerText = "$ "+ (hoteldata[0].price+Number(80))+" total (including all taxes)"
+let totalamt = (hoteldata[0].price+Number(80));
+
+localStorage.setItem("payment",JSON.stringify(totalamt))
