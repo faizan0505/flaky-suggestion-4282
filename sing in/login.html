@@ -15,11 +15,6 @@
             justify-content: space-between;
             align-items: center;
         }
-        #back{
-            font-size: 35px;
-            background-color: white;
-            border: 0px;
-        }
         a{
             text-decoration: none;
         }
@@ -54,6 +49,9 @@
        .web{
         width: 20px;
        }
+       #back > img{
+            width: 20px;
+       }
      
 
     </style>
@@ -63,7 +61,9 @@
         <div class="logo">
 
             <div>
-                <button id="back"><a href=""> < </a></button>
+                <a href="xx" id="back"> 
+                    <img src="https://cdn-icons-png.flaticon.com/128/8979/8979605.png" alt="">    
+                </a>
             </div>
             <div id="logo">
                  <img src="https://www.travelocity.com/_dms/interstitial/logo.svg?locale=en_US&siteid=80001" alt="logo">
@@ -73,8 +73,9 @@
         </div>
         <hr>
         <div class="cart">
-            <h1>Creat an account</h1>
+            <h1>Sign in</h1>
             <form id="form">
+                <h3 id="err"></h3>
                 <input type="email" placeholder="Email address" class="inputs" id="email"><br> 
                 <input type="Password" id="password"placeholder="Password" class="inputs"><br>
                 <label for="" class="warning" id="pw"></label>
@@ -83,10 +84,11 @@
 
                 <input type="checkbox" id="chek"> <br><label for="">Keep me signed in</label>
                 <p>By Creating an account I agree to the Travelocity Terms and Conditions and Privacy Statment</p>
-                <input type="submit" value="Continue" class="inputs" id="continue"><br>
+                <input type="submit" value="Sign in" class="inputs" id="continue"><br>
                 
             </form>
-            <p>Don't have an account? <a href="#">Create one</a></p>
+            <a href="" id="forget">Forgot password?</a>
+            <p>Don't have an account? <a href="./singin.html">Create one</a></p>
             <p>Or continue with</p>
             <img class="web" src="https://a.travel-assets.com/egds/marks/apple.svg" alt="">
             <img class = 'web'
@@ -100,18 +102,29 @@
     let Form = document.getElementById('form');
     let id = document.getElementById('email');
     let pass = document.getElementById('password');
-    let arr = JSON.parse(localStorage.getItem('userData')) || [];;
-   
+    let arr = JSON.parse(localStorage.getItem('userdata'))
+   let res = document.getElementById('err')
 
     Form.addEventListener('submit',function(event){
         event.preventDefault();
-        let obj = {
-            first_name : fName.value.trim(),
-            last_name : lName.value.trim(),
-            email : id.value.trim(),
-            password  : pass.value.trim()
-        };
-
+        let mail = id.value ;
+        let pw = pass.value ;
+        for(let el of arr){
+            let email = el.email
+            let password = el.password
+            let name = el.first_name
+            if(email == mail && password == pw ){
+                res.innerText = `Welcome ${name}`
+                location.href='./homepage/fw22_0277home.html'
+            }else{
+                res.innerText = `Email and password don't match. Please try again.`
+                res.style.backgroundColor = 'red'
+                res.style.color = 'white'
+                res.style.fontWeight = 'bolt'
+            }
+            
+        }
+    
    
     })
 
