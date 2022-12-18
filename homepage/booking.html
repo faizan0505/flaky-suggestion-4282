@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="booking.css" />
+    <link rel="icon" type="image/x-icon" href="Images/yaatra.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link rel="stylesheet" href="./homepage/fw22_0277home.css" /> -->
+    <title>Yaatra Booking Hotels</title>
+  </head>
+  <body>
+     <!-- Nav Bar -->
+     <div id="nav">
+      <div id="left">
+          <div onclick="home()"><img src="Images/yaatra.png" alt="" width="50%"></div>
+          <button onclick="myFun()"><h4>More Travel <i class="arrow down"></i></h4></button>
+          
+      </div>
+      <div id="dropdown" class="dropdown-content">
+              <div class="part">
+                  <div>
+                      <img src="https://forever.travel-assets.com/flex/flexmanager/images/2021/04/08/icon__mode_edit.svg" alt="" width="50%">
+                  </div>
+                  <div>
+                      <p>Packages</p>
+                  </div>
+              </div>
+              <div class="part">
+                  <div>
+                      <img src="https://forever.travel-assets.com/flex/flexmanager/images/2021/04/08/icon__mode_edit.svg" alt="" width="50%">
+                  </div>
+                  <div>
+                      <p>Stays</p>
+                  </div>
+              </div>
+              <div class="part">
+                  <div>
+                      <img src="https://forever.travel-assets.com/flex/flexmanager/images/2021/04/08/icon__mode_edit.svg" alt="" width="50%">
+                  </div>
+                  <div>
+                      <p>Cars</p>
+                  </div>
+              </div>
+              <div class="part">
+                  <div>
+                      <img src="https://forever.travel-assets.com/flex/flexmanager/images/2021/04/08/icon__mode_edit.svg" alt="" width="50%">
+                  </div>
+                  <div><p>Flights</p></div>
+              </div>
+              <div class="part">
+                  <div>
+                      <img src="https://forever.travel-assets.com/flex/flexmanager/images/2021/04/08/icon__mode_edit.svg" alt="" width="50%">
+                  </div>
+                  <div>
+                      <p>Cruise</p>
+                  </div>
+              </div>
+              <div class="part">
+                  <div>
+                      <img src="https://forever.travel-assets.com/flex/flexmanager/images/2021/04/08/icon__mode_edit.svg" alt="" width="50%">
+                  </div>
+                  <div>
+                      <p>Things to do</p>
+                  </div>
+              </div>
+              <div><p>Trips for me</p></div>
+              <div><p>discover</p></div>
+              <div><p>Travel Deals</p></div>
+              <div><p>Get inspired</p></div>
+              <div><p>Groups and Meetings</p></div>
+      </div>
+      <div id="sign" class="signindrp">
+          <div><h4>Members can access discounts and special features</h4></div>
+          <div><button>Sign in</button></div>
+          <div><h5>Create free account</h5></div>
+          <div style="margin-bottom: 0;"><p>List of favourites</p></div>
+          <hr style="background-color: black;">
+          <div><p>Feedbback</p></div>
+      </div>
+      <div id="right">
+          <div>
+              <h4>Espa&#xF1ol</h4>
+          </div>
+          <div>
+              <h4>List your property</h4>
+          </div>
+          <div>
+              <h4>Support</h4>
+          </div>
+          <div>
+              <h4>Trips</h4>
+          </div>
+          <div>
+              <button onclick="signIn()"><h4>Sign in</h4></button>
+          </div>
+      </div>
+      
+  </div>
+    <!-- Nav Bar -->
+    <div id="container">
+      <hr />
+      <div id="booking-form">
+        <input type="text" placeholder="Location" oninput="LocationSearch()"/ id="location">
+        <input type="date" value="Dec-28" />
+        <input type="month" />
+        <input type="number" placeholder="Person"/>
+        <input type="submit" />
+      </div>
+      <div id="api-container">
+        <div id="sort-section">
+          <div id="map-image">
+            <img src="Images/staticmap.jpg" alt="Map" />
+            <a href="location.html">View in map</a>
+          </div>
+          <hr>
+          <div id="search-input">
+            <input type="text" placeholder="search by name" oninput="SearchHotel()" id="inputData">
+          </div>
+          <hr>
+          <div id="filter">
+            <h2>Filter by</h2>
+            <h4>Popular filters</h6>
+            <input type="checkbox">
+            <label>Free airport shuttle</label>
+            <br>
+            <input type="checkbox">
+            <label>Breakfast included</label>
+            <br>
+            <input type="checkbox">
+            <label>Hotel</label>
+            <br>
+            <input type="checkbox">
+            <label>All inclusive</label>
+            <br>
+            <input type="checkbox">
+            <label>Aerocity</label>
+          </div>
+          <hr>
+          <div id="guest-rating">
+            <h4>Guest rating</h4>
+            <input type="radio"><label>Any</label><br>
+            <input type="radio"><label>Wonderful 9+</label><br>
+            <input type="radio"><label>Very good 8+</label><br>
+            <input type="radio"><label>Good 7+</label>
+          </div>
+          <hr>
+          <div id="star-rating">
+            <h4>Star Rating</h4>
+            <input type="text" value="1⭐">
+            <input type="text" value="2⭐">
+            <input type="text" value="3⭐">
+            <input type="text" value="4⭐">
+            <input type="text" value="5⭐">
+          </div>
+          <hr>
+          <div id="payment-type">
+            <h4>Payment type</h4>
+            <input type="checkbox"><label>Fully refundable</label>
+            <br>
+            <input type="checkbox"><label>Reserve now, pay later</label>
+          </div>
+          <hr>
+          <div id="propery-type">
+            <h4>Property type</h4>
+            <input type="checkbox"><label>Hotel</label>
+            <br>
+            <input type="checkbox"><label>Bed & breakfast</label>
+            <br>
+            <input type="checkbox"><label>Hotel resort</label>
+          </div>
+          <hr>
+          <div id="travel-exp">
+            <h4>Traveler experience</h4>
+            <input type="checkbox"><label>Family friendly</label>
+            <p>See properties that include family essentials like in-room conveniences and activities for the kids.</p>
+            <br>
+            <input type="checkbox"><label>Business friendly</label>
+            <p>See properties with amenities to help you work comfortably, like WiFi and breakfast.</p>
+          </div>
+          <hr>
+          <div id="neighborhood">
+            <h4>Neighborhood</h4>
+            <input type="radio"><label>Delhi (and vicinity)</label><br>
+            <input type="radio"><label>Aerocity</label><br>
+            <input type="radio"><label>Delhi (DEL-Indira Gandhi Intl.)</label><br>
+            <input type="radio"><label>Connaught Place</label><br>
+            <input type="radio"><label>Rajouri Garden</label><br>
+            <input type="radio"><label>Dwarka</label><br>
+            <input type="radio"><label>Paharganj</label><br>
+            <input type="radio"><label>Rohini</label><br>
+            <input type="radio"><label>Saket</label><br>
+            <input type="radio"><label>Chanakyapuri</label><br>
+            <input type="radio"><label>Vasant Kunj</label><br>
+            <input type="radio"><label>Nehru Place</label><br>
+            <input type="radio"><label>Mayur Vihar</label><br>
+            <input type="radio"><label>Karol Bagh</label><br>
+            <input type="radio"><label>Indirapuram</label><br>
+            <input type="radio"><label>Shivaji Stadium Station</label><br>
+            <input type="radio"><label>Okhla Phase I</label><br>
+            <input type="radio"><label>Chhatarpur</label><br>
+            <input type="radio"><label>Noida</label><br>
+            <input type="radio"><label>Mahipalpur</label><br>
+            <a href="#">See more</a>
+          </div>
+          <hr>
+          <div id="popular-location">
+            <h4>Popular Location</h4>
+            <input type="radio"><label>Chandni Chowk</label>
+            <br>
+            <input type="radio"><label>Swaminarayan Akshardham</label>
+            <br>
+            <input type="radio"><label>India Gate</label>
+            <br>
+            <a href="#">See more</a>
+          </div>
+          <hr>
+          <div id="mail-plan">
+            <h4>Meal plans available</h4>
+            <input type="checkbox"><label>Breakfast included</label><br>
+            <input type="checkbox"><label>Lunch included</label><br>
+            <input type="checkbox"><label>Dinner included</label><br>
+            <input type="checkbox"><label>All inclusive</label><br>
+            <a href="#">See Less</a>
+          </div>
+          <hr>
+          <div id="amenties">
+            <h4>Amenities</h4>
+            <input type="checkbox"><label>Free airport shuttle</label><br>
+            <input type="checkbox"><label>Hot tub</label><br>
+            <input type="checkbox"><label>Spa</label><br>
+            <a href="#">See more</a>
+          </div>
+          <hr>
+          <div id="accessbility">
+            <h4>Accessibility</h4>
+            <input type="checkbox"><label>Wheelchair-accessible parking</label><br>
+            <input type="checkbox"><label>Elevator</label><br>
+            <input type="checkbox"><label>Accessible bathroom</label><br>
+            <a href="#">See more</a>
+          </div>
+        </div>
+
+        <div id="data-section">
+          <div id="discount-info">
+            <div>
+              <p>3,032 properties</p>
+              <p><b>See how we pick our recommended properties !</b></p>
+            </div>
+            <div>
+              <!-- <input type="text" name="" id="" placeholder="Sort by price" /> -->
+              <select name="" id="sort-data" onchange="sortByPrice();">
+                  <option value=" ">Sort By Price</option>
+                  <option value="LTH">Low to high</option>
+                  <option value="HTL">High to low</option>
+              </select>
+            </div>
+          </div>
+          <div id="discount-card">
+            <img
+              src="https://a.travel-assets.com/egds/marks/mod_tvly.svg"
+              alt=""
+            />
+            <div>
+              <p>You could save 10% or more right now</p>
+              <p>
+                Unlock Member Discounts and save on thousands of properties, all
+                backed by our Price Match Guarantee.
+              </p>
+              <dir>
+                <a href="#">Join now, it's free </a>&nbsp;<a href="#"
+                  >Sign in</a
+                >
+              </dir>
+            </div>
+          </div>
+          <div id="fetching-data">
+           <!-- Api Data -->
+          </div>
+        </div>
+        <!-- Chat Section -->
+        <button class="open-button" onclick="openForm()"><i class="fa fa-wechat" style="font-size:48px;color:rgb(158, 8, 28)"></i></button>
+        <div class="chat-popup" id="myForm">
+          <form action="#" class="form-container">
+            <h3 style="text-align: center; color: rgb(251, 255, 255); background-color: rgb(105, 102, 105); padding: 12px;border-radius: 10px;">Chat with Yaatra</h3>
+            <label for="msg" style="text-align: center; color: teal;"><b>Message......</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+        <!-- Chat section close -->
+      </div>
+    </div>
+  </body>
+</html>
+<script src="booking.js"></script>
+<script src="./homepage/fw22_0277home.js"></script>

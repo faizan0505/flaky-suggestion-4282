@@ -12,7 +12,7 @@ function signIn(){
 }
 
 function home(){
-    window.location.href="home.html"
+    window.location.href="fw22_0277home.html"
 }
 
 function tripCont(){
@@ -541,3 +541,23 @@ document.querySelector("#things").addEventListener("click",()=>{
     document.querySelector(".menu>div:nth-child(5)").classList.add("underline")
     
 })
+
+document.querySelector("#rajender").addEventListener("click",()=>{
+    location.href="ListYourProperty.html"
+    // console.log("rajender clicked")
+})
+
+document.querySelector("#jayant").addEventListener("click",()=>{
+    location.href="login.html"
+    // console.log("rajender clicked")
+})
+document.querySelector("#jayant-signUp").addEventListener("click",()=>{
+    location.href="singin.html"
+    // console.log("rajender clicked")
+})
+
+document.querySelector("#Rambhai").addEventListener("click",()=>{
+    location.href="booking.html"
+    // console.log("rajender clicked")
+})
+
